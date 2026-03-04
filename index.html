@@ -3,15 +3,15 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js">
-      </script>
-      <script>
-          AFRAME.registerComponent('removing',{
-            init: funcion () {
-              var el = this.el;
-              el.addEventListener('mouseenter', function () { el.setAttribute('color', 'red'); });
-              el.addEventListener('mouseenter', function () { el.setAttribute('color', 'firebrick'); });
-              el.addEventListener('click', funcion () { el.remove(); });
-          }
+    </script>
+    <script>
+          AFRAME.registerComponent('removing', {
+              init: funcion () {
+                var el = this.el;
+                el.addEventListener('mouseenter', function () { el.setAttribute('color', 'red'); });
+                el.addEventListener('mouseenter', function () { el.setAttribute('color', 'firebrick'); });
+                el.addEventListener('click', funcion () { el.remove(); });
+            }
         });
       </script>
   </head>
