@@ -32,7 +32,7 @@
          sound="src:#hawk; poolSize: 2" sounding></a-entity>
       <a-entity gltf-model="#bird" scale="5 5 5" shadow="receive: false" position="50 25 -50" rotation="0 180 0">
          sound="src:#hawk; poolSize: 2" sounding></a-entity>
-      </a-entity>
+    </a-entity>
    </a-scene>
   <script>
     var scene1 = document.getElementById('s1');
@@ -56,7 +56,7 @@
       var s = Math.random() * 10 - 5;
       var r = Math.random() * 180 - 90;
       bee.setAttribute('gltf-model', '#bee');
-      bee.setAttibute('position', x+ ' ' + y + ' ' +z);
+      bee.setAttibute('position', x + ' ' + y + ' ' + z);
       bee.setAttibute('scale', '0.01 0.01 0.01');
       bee.setAttibute('rotation', '0 ' + r + ' 0');
       bee.setAttibute('sound', 'src:#bzzz; volume: 0.1; poolSize: 10');
