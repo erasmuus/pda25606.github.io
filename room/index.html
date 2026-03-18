@@ -26,7 +26,7 @@
       el.addEventListener('mouseenter', function () {
         var pos = document.getElementById('cam').getAttribute('position');
         
-        if (el.id == "door") {
+        if (el.id == "window") {
           if (!locked && time >= 0) { el.components.sound.playSound(); message = "Well done!"; }
           return;
         }
