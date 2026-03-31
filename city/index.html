@@ -92,3 +92,12 @@
         </a-camera>
         <a-entity oculus-touch-controls="hand= right" oculus-thumbstick-controls="acceleration: 500"></a-entity>
       </a-entity>
+<a-entity id="spacecraft" gltf-model="#craft" scale="10 10 10"
+animation="property: position; from: 0 66 0; to: 0 77 8; dur: 21000; dir: alternate; loop: true"
+animation__2="property: rotation; from: 0 0 0; to: 0 360 0; dur: 39000; dir: alternate; loop: true">
+<a-entity light="type: spot; penumbra: 0.5; distance: 200; castShadow: true" position="0 -1 5" rotation="0 -180 0"> 
+  <a-camera id="cam2" position="0 3 6" wasd-controls="enabled: false" look-controls="enabled: false" active="false"> 
+    <a-entity text="font: https://cdn.aframe.io/fonts/mozillavr.fnt" id="txt" position="0.4 0 -0.2"›</a-entity>
+</a-camera>
+</a-entity>
+</a-entity>
