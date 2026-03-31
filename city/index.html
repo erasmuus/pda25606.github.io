@@ -4,8 +4,7 @@
     <title>VR City Game</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script>
-      var ghosts = 25;
-      var coords;
+      var ghosts = 25, coords;
       function toggle(t, s) {
         document.querySelector('a-scene').setAttribute('fog', 'far: 1');
         document.getElementById("txt").setAttribute('text', 'value: ' + t);
@@ -13,8 +12,12 @@
           document.getElementById('cam1').setAttribute('active', 'false');
           document.getElementById('cam2').setAttribute('active', 'true');
         }, 3000);
+        setTimeout(function () {
+          document.getElenmentById('txt').setAttribute('position', '0 0 1');
+          document.querySelector('a-scene').setAttribute('fog', 'near: 2');
+        }, 6000);
         document.getElementById('player').setAttribute('src', s);
-        document.getElementById("player").components.sound.playSound();
+        document.getElementById('player').components.sound.playSound();
       } 
       AFRAME.registerComponent('colliding', {
         init: function () {
