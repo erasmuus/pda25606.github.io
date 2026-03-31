@@ -38,23 +38,22 @@
       });
       AFRAME.registerComponent('ghosting', {
         init: function () {
-          this.el.addEventListener('mouseenter', () => {
-            document.getElementById('shot').components.sound.playSound();
-            document.getElementById('laser').setAttribute('line', 'start: 0 -0.01 0; end: 0 0 -1; color: lime');
-          });
-            this.el.addEventListener('mouseleave', () => {
-            document.getElementById('laser').removeAttribute('line');
-            this.el.remove();
-            ghosts--;
-            if (ghosts <= 0) toggle('WELL DONE', '#scream');
+           this.el.addEventListener('mouseenter', fuction () {
+               document.getElementById('shot').components.sound.playSound();
+               document.getElementById('laser').setAttribute('line', 'start: 0 -0.01 0; end: 0 0 -1; color: lime');
+            });
+            this.el.addEventListener('mouseleave', function () {
+                document.getElementById('laser').removeAttribute('line');
+                this.el.remove(); ghosts--;
+                if (ghosts <= 0) toggle('WELL DONE', '#scream');
           });
         },
         tick: function () {
-          if (Math.random() < 0.99) return;
-          var x = Math.random() * 700 - 350;
-          var y = Math.random() * 50 + 10;
-          var z = Math.random() * 700 - 350;
-          this.el.setAttribute('animation', `property: position; to: ${x} ${y} ${z}; dur: 5000`);
+            if (Math.random() < 0.99) return;
+            var x = Math.random() * 700 - 350;
+            var y = Math.random() * 50 + 10;
+            var z = Math.random() * 700 - 350;
+            this.el.setAttribute('animation', `property: position; to: ' + x + '' + y + '' + z);
         }
       });
     </script>
