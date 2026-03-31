@@ -1,7 +1,6 @@
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>VR City Game</title>
+    <body>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script>
       var ghosts = 25, coords;
@@ -22,23 +21,20 @@
       AFRAME.registerComponent('colliding', {
         init: function () {
           coords = document.getElementById('cam1');
-          this.el.sceneEl.addEventListener('enter-vr', function () { coords = document.getElementById('rig'); });
-          this.el.sceneEl.addEventListener('exit-vr', function () { coords = document.getElementById('cam1'); });
+          document.querySelector('a-escene').addEventListener('enter-vr', function () { coords = document.getElementById('rig'); });
+          document.querySelector('a-escene').addEventListener('exit-vr', function () { coords = document.getElementById('cam1'); });
         },
         tick: function () {
           var pos1 = coords.getAttribute('position');
           var pos2 = this.el.getAttribute('position');
+          if (Math.abs(pos1.x - pos2.x) < 40 && Math.abs(pos1.z - pos2.z) < 40) toggle('GAME OVER', '#explode');
+          
           var rot = document.getElementById('spacecraft').getAttribute('rotation');
-          if (Math.abs(pos1.x - pos2.x) < 48 && Math.abs(pos1.z - pos2.z) < 40) {
-            toggle('GAME OVER', '#explode');
-          }
           var distance = Math.sqrt(pos1.x * pos1.x + pos1.z * pos1.z);
           var angle = Math.atan2(pos1.x, pos1.z) * 180 / Math.PI;
           if (angle < 0) angle = 360 + angle;
-          if ((Math.abs(rot.y - angle) < 38 || Math.abs(rot.y - angle) > 345) && distance > 5 && distance < 250) {
-            toggle('GAME OVER', '#police');
+          if ((Math.abs(rot.y - angle) < 30 || Math.abs(rot.y - angle) > 345) && distance > 5 && distance < 250) toggle('GAME OVER', '#police');
           }
-        }
       });
       AFRAME.registerComponent('ghosting', {
         init: function () {
