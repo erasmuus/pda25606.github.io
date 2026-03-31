@@ -138,28 +138,23 @@ animation__2="property: rotation; from: 0 0 0; to: 0 360 0; dur: 39000; dir: alt
                 scenel.appendChild(box);
             }
         }
-      </script>
-     var scene1 = document.querySelector('a-scene');
+      var scene1 = document.querySelector('a-scene');
       for (var i = -350; i <= 350; i += 100) {
-for (var j = -350; j <= 350; j += 100) {
-if (Math. abs(i) < 200 && Math. abs(j) < 200) continue;
-var p = document.getElementById('pavement' ).cloneNode(true) ;
-p. setAttribute('position"
-p. setAttribute('visible",
-'true');
-scene1. appendChild(p);
-var box = document. createElement('a-box');
-var h = Math.ceil(Math.random() •*-6); box. setAttribute(' src"
-"#b" + h) ;
-box.setAttribute('repeat"
-"1.'
-+ Math.ceil(h / 2));
-box. seAttribute(' scale',
-'60
-+ (30 *- (h + 1)) +
-60');
-box.setAttribute('position'
-, i +" + ((h+ 1)*•15 + 10.5) +*
-box. setAttribute(' shadow",
-."*);
-box. setAttribute(' colliding', ""); scenel.appendChild(box);
+         for (var j = -350; j <= 350; j += 100) {
+             if (Math. abs(i) < 200 && Math. abs(j) < 200) continue;
+             var p = document.getElementById('pavement').cloneNode(true);
+             p.setAttribute('position', i + '0.25' + j);
+             p.setAttribute('visible', 'true');
+             scene1. appendChild(p);
+             
+             var box = document.createElement('a-box');
+             var h = Math.ceil(Math.random() * 6); 
+             box.setAttribute('src', "#b" + h);
+             box.setAttribute('repeat', '1 ' + Math.ceil(h / 2));
+             box.seAttribute('scale', '60' + (30 * (h + 1)) + '60');
+             box.setAttribute('position', i + '' + ((h + 1) * 15 + 10.5) + '' + j);
+             box.setAttribute('shadow', '');
+             box.setAttribute('colliding',''); 
+             scenel.appendChild(box);
+         }
+      }
