@@ -11,12 +11,12 @@
         ];
 
         // INVENTORY: add any items available when the game starts
-        let ITEMS = ['a watch'];
+        let ITEMS = [''];
 
         // MAIN INFO: enter the scenes welcome text (ascending order)
         const TEXT = [
-            'You are walking on a narrow path.\nThere is an old store house beside.',
-            'A man is sitting behind a table:\n"Hi, do you have something for me?"',
+            'You were called in the crime scene.\nThe crime scene is beside you.',
+            'The victim was murdered here\n"Here you go."',
             'You are in the middle of a field.\nA policeman is standing by his car.',
             'There is a small harbor here.\nThe sailor is ready to depart...',
             'You are at the center of a village.\nA begar is asking for help!',
@@ -57,9 +57,9 @@
 
         <!-- 2nd SCENE -->
         <a-entity id="scene2" class="scene" visible="false">
-            <a-cylinder class="interactive" position="-3 1 -4" scale="0.5 2 0.5" visible="false" drop="a watch"
-                pick="some money" goal='"Nice stuff,\nI will pay for it!"'
-                fail='"Have a nice day foreigner,\nI need to work now."'>
+            <a-cylinder class="interactive" position="-3 1 -4" scale="0.5 2 0.5" visible="false" drop=""
+                pick="police report" goal='"Good luck!\nYou can start investigating."'
+                fail='"I will be here if you need anything. \nGo now!"'>
             </a-cylinder>
         </a-entity>
 
