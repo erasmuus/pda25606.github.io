@@ -17,8 +17,8 @@
         const TEXT = [
             'You were called in the crime scene.\nThe crime scene is beside you.',
             'The victim was murdered here\n"Here you go."',
-            'You are in the middle of a field.\nA policeman is standing by his car.',
-            'There is a small harbor here.\nThe sailor is ready to depart...',
+            'You are in a dark alley\nA man is standing by the wall.',
+            'This is the suspect room.\nYou may arrest the culprit.',
             'You are in the lab.\nYour colleague is calling you.',
             'You are standing next to the river.\nIt looks like someone dropped something.'
         ];
@@ -57,23 +57,23 @@
 
         <!-- 2nd SCENE -->
         <a-entity id="scene2" class="scene" visible="false">
-            <a-cylinder class="interactive" position="-3 1 -4" scale="0.5 2 0.5" visible="false" drop=""
+            <a-cylinder class="interactive" position="-3 1 -4" scale="0.5 2 0.5" visible="false" drop="axe"
                 pick="police report" goal='"Good luck!\nYou can start investigating."'
-                fail='"I will be here if you need anything. \nGo now!"'>
+                fail='"I will be here if you need anything.\nGo now!"'>
             </a-cylinder>
         </a-entity>
 
         <!-- 3rd SCENE -->
         <a-entity id="scene3" class="scene" visible="false">
-            <a-cylinder class="interactive" position="-1.25 0.75 -4" scale="0.5 3 0.5" visible="false" drop="shoe"
+            <a-cylinder class="interactive" position="-1.25 0.75 -4" scale="0.5 3 0.5" visible="false" drop="axe"
                 over="goal" goal='"What are you carrying there?\nI will kill you!"'
-                fail='"Goodmorning!\nEverything looks perfect today..."'>
+                fail='"Good day, sir!"'>
             </a-cylinder>
         </a-entity>
 
         <!-- 4th SCENE -->
         <a-entity id="scene4" class="scene" visible="false">
-            <a-cylinder class="interactive" position="4 2 1" scale="0.5 1 0.5" visible="false" drop="some money"
+            <a-cylinder class="interactive" position="4 2 1" scale="0.5 1 0.5" visible="false" drop="shoe"
                 over="goal" goal="You made it...\nYou are free to sail away!"
                 fail='"Hello there,\nno place for you on my boat..."'>
             </a-cylinder>
