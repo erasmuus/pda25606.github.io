@@ -88,8 +88,8 @@ AFRAME.registerComponent('game-logic', {
         document.querySelector('#scene' + s).setAttribute('animation', 'property: visible; to: true; dur: 500');
         setTimeout(() => { document.querySelector('#scene' + s).removeAttribute('animation'); }, 1000);
 
-        document.querySelector('#sky').setAttribute('src', '#sky' + s);
         const SKY_ROTATIONS = ['0 -90 0', '0 0 0', '0 45 0', '0 -45 0', '0 90 0', '0 180 0'];
+        document.querySelector('#sky').setAttribute('src', '#sky' + s);
         document.querySelector('#sky').setAttribute('rotation', SKY_ROTATIONS[s - 1]);
         document.querySelector('#sky').setAttribute('opacity', '0');
         document.querySelector('#sky').setAttribute('animation', 'property: opacity; to: 1; dur: 500');
