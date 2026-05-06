@@ -33,22 +33,37 @@ AFRAME.registerComponent('game-logic', {
                 this.timer = 250;
             }
         });
-        document.querySelector('#north').addEventListener('click', () => {
-        const rot = this.cam.getAttribute('rotation');
-        let d = 2;
-        if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 0;
-        if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 1;
-        if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 3;
-        this.transportMove(d);
+       document.querySelector('#north').addEventListener('click', () => {
+            const rot = this.cam.getAttribute('rotation');
+            let d = 2;
+            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 0;
+            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 1;
+            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 3;
+            this.transportMove(d);
         });
         document.querySelector('#south').addEventListener('click', () => {
-            if (document.querySelector('#south').getAttribute('visible') !== false) this.transportMove(dir);
+            const rot = this.cam.getAttribute('rotation');
+            let d = 3;
+            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 1;
+            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 0;
+            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 2;
+            this.transportMove(d);
         });
         document.querySelector('#east').addEventListener('click', () => {
-            if (document.querySelector('#east').getAttribute('visible') !== false) this.transportMove(dir);
+            const rot = this.cam.getAttribute('rotation');
+            let d = 0;
+            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 3;
+            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 2;
+            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 1;
+            this.transportMove(d);
         });
         document.querySelector('#west').addEventListener('click', () => {
-            if (document.querySelector('#west').getAttribute('visible') !== false) this.transportMove(dir);
+            const rot = this.cam.getAttribute('rotation');
+            let d = 1;
+            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 2;
+            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 3;
+            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 0;
+            this.transportMove(d);
         });
         this.loadScene(1);
     },
