@@ -90,6 +90,7 @@ AFRAME.registerComponent('game-logic', {
 
         const SKY_ROTATIONS = ['0 0 0', '0 0 0', '0 160 0', '0 120 0', '0 -116 0', '0 70 0'];
         document.querySelector('#sky').setAttribute('src', '#sky' + s);
+        document.querySelector('#sky').setAttribute('rotation', SKY_ROTATIONS[s - 1]);
         document.querySelector('#sky').setAttribute('opacity', '0');
         document.querySelector('#sky').setAttribute('animation', 'property: opacity; to: 1; dur: 500');
         setTimeout(() => { document.querySelector('#sky').removeAttribute('animation'); this.timer = 250; }, 1000);
