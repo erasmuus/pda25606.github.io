@@ -34,7 +34,12 @@ AFRAME.registerComponent('game-logic', {
             }
         });
         document.querySelector('#north').addEventListener('click', () => {
-        if (document.querySelector('#north').getAttribute('visible') !== false) this.transportMove(dir);
+        const rot = this.cam.getAttribute('rotation');
+        let d = 2;
+        if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 0;
+        if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 1;
+        if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 3;
+        this.transportMove(d);
         });
         document.querySelector('#south').addEventListener('click', () => {
             if (document.querySelector('#south').getAttribute('visible') !== false) this.transportMove(dir);
