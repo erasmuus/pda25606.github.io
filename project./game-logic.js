@@ -33,18 +33,6 @@ AFRAME.registerComponent('game-logic', {
                 this.timer = 250;
             }
         });
-        document.querySelector('#north').addEventListener('click', () => {
-        if (document.querySelector('#north').getAttribute('visible') !== false) this.transportMove(dir);
-        });
-        document.querySelector('#south').addEventListener('click', () => {
-            if (document.querySelector('#south').getAttribute('visible') !== false) this.transportMove(dir);
-        });
-        document.querySelector('#east').addEventListener('click', () => {
-            if (document.querySelector('#east').getAttribute('visible') !== false) this.transportMove(dir);
-        });
-        document.querySelector('#west').addEventListener('click', () => {
-            if (document.querySelector('#west').getAttribute('visible') !== false) this.transportMove(dir);
-        });
         this.loadScene(1);
     },
     tick: function () {
@@ -66,7 +54,11 @@ AFRAME.registerComponent('game-logic', {
         document.querySelector('#north').setAttribute('visible', checkN);
         document.querySelector('#south').setAttribute('visible', checkS);
 
-
+        if (checkN) {
+            if (--this.timer === 0) this.transportMove(dir);
+        }
+        else this.timer = 250;
+    },
     transportMove: function (d) {
         const pos = this.cam.getAttribute('position');
         switch (d) {
