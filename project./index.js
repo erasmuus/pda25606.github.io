@@ -13,7 +13,7 @@
     <h1>ΤΙΤΛΟΣ ΕΡΓΑΣΙΑΣ (Murder mystery)</h1>
     <h3>Ονοματεπώνυμο (Eva & Eylul)</h3>
     <hr />
-    <p><strong>Σενάριο (script):</strong>...</p>
+    <p><strong>Σενάριο (You are a detective whom was called to the crime scene to solve the murder):</strong>...</p>
     <hr />
     <div align="center">
     <a-scene ondblclick="this.requestFullscreen(https://erasmuus.github.io/pda25606.github.io/project./);" embedded>
