@@ -24,10 +24,21 @@
         ];
     </script>
     <script src="game-logic.js"></script>
+    <style>
+        h1 { text-align: center; }
+        h3 { text-align: center; }
+        a-scene { width: 50%; height: 50%; border: dotted silver 1px; }
+    </style>
 </head>
 
 <body>
-    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .interactive" game-logic>
+    <h1>ΤΙΤΛΟΣ ΕΡΓΑΣΙΑΣ (Murder mystery)</h1>
+    <h3>Ονοματεπώνυμο (Eva & Eylul)</h3>
+    <hr />
+    <p><strong>Σενάριο (You are a detective whom was called to the crime scene to solve the murder):</strong>...</p>
+    <hr />
+    <div align="center">
+    <a-scene cursor="rayOrigin: mouse" raycaster="objects: .interactive" game-logic ondblclick="this.requestFullscreen();" embedded>
 
         <!-- SKY IMAGES -->
         <a-assets>
@@ -81,7 +92,7 @@
 
         <!-- 5th SCENE -->
         <a-entity id="scene5" class="scene" visible="false">
-            <a-cylinder class="interactive" position="-2.1 1.7 3.9" scale="1.8 7.2 1.0" visible="false" drop="a police report"
+            <a-cylinder class="interactive" position="-2 1.7 3.9" scale="1.8 7.2 1.0" visible="false" drop="a police report"
                  pick="an axe" goal='"This is the murder weapon.\nGood luck with your investigation."'
                  fail='"I need the police report.\nI can not help you without it."'>
             </a-cylinder>
@@ -97,6 +108,11 @@
         </a-entity>
 
     </a-scene>
+    </div>
+    <hr />
+    <p><strong>Οδηγίες (guidelines):</strong>...</p>
+    <hr />
+    <p><strong>Credits:</strong></p>
 </body>
   
 </html>
