@@ -16,7 +16,7 @@
     <p><strong>Σενάριο (You are a detective whom was called to the crime scene to solve the murder):</strong>...</p>
     <hr />
     <div align="center">
-    <a-scene ondblclick="this.requestFullscreen(https://erasmuus.github.io/pda25606.github.io/project./);" embedded>
+    <a-scene ondblclick="this.requestFullscreen();" embedded>
     </a-scene>
     </div>
     <hr />
