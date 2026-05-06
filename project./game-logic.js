@@ -33,38 +33,6 @@ AFRAME.registerComponent('game-logic', {
                 this.timer = 250;
             }
         });
-       document.querySelector('#north').addEventListener('mousedown', () => {
-            const rot = this.cam.getAttribute('rotation');
-            let d = 2;
-            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 0;
-            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 1;
-            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 3;
-            this.transportMove(d);
-        });
-        document.querySelector('#south').addEventListener('mousedown', () => {
-            const rot = this.cam.getAttribute('rotation');
-            let d = 3;
-            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 1;
-            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 0;
-            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 2;
-            this.transportMove(d);
-        });
-        document.querySelector('#east').addEventListener('mousedown', () => {
-            const rot = this.cam.getAttribute('rotation');
-            let d = 0;
-            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 3;
-            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 2;
-            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 1;
-            this.transportMove(d);
-        });
-        document.querySelector('#west').addEventListener('mousedown', () => {
-            const rot = this.cam.getAttribute('rotation');
-            let d = 1;
-            if (Math.abs(rot.y + 90) % 360 < 15 || Math.abs(rot.y + 90) % 360 > 345) d = 2;
-            if (Math.abs(rot.y - 90) % 360 < 15 || Math.abs(rot.y - 90) % 360 > 345) d = 3;
-            if (Math.abs(rot.y + 180) % 360 < 15 || Math.abs(rot.y + 180) % 360 > 345) d = 0;
-            this.transportMove(d);
-        });
         this.loadScene(1);
     },
     tick: function () {
@@ -86,6 +54,10 @@ AFRAME.registerComponent('game-logic', {
         document.querySelector('#north').setAttribute('visible', checkN);
         document.querySelector('#south').setAttribute('visible', checkS);
 
+        if (checkN) {
+            if (--this.timer === 0) this.transportMove(dir);
+        }
+        else this.timer = 250;
     },
     transportMove: function (d) {
         const pos = this.cam.getAttribute('position');
@@ -130,4 +102,4 @@ AFRAME.registerComponent('game-logic', {
         this.info.setAttribute('value', text[0] + '\n\nTHE END');
         document.querySelector('a-scene').pause();
     }
-});
+})
