@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <h1>ΤΙΤΛΟΣ ΕΡΓΑΣΙΑΣ (Murder mystery)</h1>
-    <h3>Ονοματεπώνυμο (Eva & Eylul)</h3>
+    <h1>Murder Mystery</h1>
+    <h3>Eva & Eylul</h3>
     <hr />
-    <p><strong>Σενάριο (You are a detective whom was called to the crime scene to solve the murder):</strong>...</p>
+    <p><strong>You are a detective whom was called to the crime scene to solve the murder:</strong>...</p>
     <hr />
     <div align="center">
     <a-scene ondblclick="this.requestFullscreen();" embedded>
