@@ -20,7 +20,7 @@
     </a-scene>
     </div>
     <hr />
-    <p><strong>Οδηγίες (guidelines):<strong>...</p>
+    <p><strong>Οδηγίες To move between scenes, stare at a point while the arrows appear on the screen. You can interact with objects and people to solve the crime; they will help you. Good luck!):<strong>...</p>
     <hr />
     <p><strong>Credits:</strong></p>
 </body>
